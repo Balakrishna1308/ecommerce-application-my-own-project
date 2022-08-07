@@ -1,0 +1,36 @@
+Enhance ProductController class (retrieveProductById method) with validating productId by using orElseThrow() method
+
+Enhance ProductController class (deleteProductById method) with validating productId by orElseThrow() method
+
+Validate the product code (experiment with static block) - it should have only first three characters as alphabets
+and the rest are the numerics - it should be only alphanumeric and there should be no special characters.
+
+Add "codeLastModified" field in the Product entity.
+
+Enhance global exceptions
+
+Enhance saveProduct @ Controller - remove Conflict and apply appropriate HTTP status and send an appropriate message.
+                         
+map() implementation                         
+                            
+flatMap() implementation 
+
+filter() implementation - filter the products with their product codes.
+Eg: Some products can have the product code starts with VUI(VUI1234567), some with OUP(OUP1234567), and some with AVB(AVB1234567).
+So these have to be filtered according to their product code that starts with OUT, VUI, AVB, etc.
+
+Sorting the products based on product name - first flatMap() to be applied to get the list of initials of all the products using flatMap()
+and then sorting technique should be used.
+
+
+
+
+ 
+
+
+ 
+
+                                   
+
+
+
