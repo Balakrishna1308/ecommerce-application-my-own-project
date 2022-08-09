@@ -36,9 +36,11 @@ public class Product
 	@Size(min = 8, max=25, message = "Product name must be between 8 and 25")
 	private String productName;
 	
+	@NotLeadingOrTrailingSpaces(message = "No leading or trailing spaces for ProductCode")
 	@ProductCode(value = "VUI", message = "product code must start with VUI")
 	private String productCode;
 	
+	@NotLeadingOrTrailingSpaces(message = "Leading or trailing spaces not allowed for product description")	
 	private String productDescription;
 	private BigDecimal productPrice;
 	
