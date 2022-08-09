@@ -23,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bala.ecommerce.application.myownproject.apis.ValidateTheProductNameIfItContainsAnyLeadingOrTrailingSpaces;
+import com.bala.ecommerce.application.myownproject.apis.MessageToTheConsumer;
+import com.bala.ecommerce.application.myownproject.apis.MessagesToTheCostomerImpl;
 import com.bala.ecommerce.application.myownproject.apis.TrimTheProductNameIfItContainsAnyLeadingOrTrailingSpaces;
 import com.bala.ecommerce.application.myownproject.apis.ValidateProductCodeIfItHasAnySpecialCharacters;
 import com.bala.ecommerce.application.myownproject.apis.ValidatingLengthOfTheProductCode;
@@ -40,6 +42,15 @@ public class ProductController
 	private MessageSource messageSource;
 	
 	private ProductService productService;
+	
+	
+	//Simple message to the customer
+	@GetMapping("/message/")
+	public String simpleMesageToTheConsumers()
+	{
+		MessageToTheConsumer messageToTheConsumer = new MessagesToTheCostomerImpl();
+		return messageToTheConsumer.defaultMessageToTheConsumer();
+	}	
 	
 	//Create saveProduct() REST end point
 	@PostMapping("/")
@@ -61,31 +72,8 @@ public class ProductController
 		else if (doesProductNameContainsLeadingOrTrailingZeros) 		
 		return new ResponseEntity<Product>(HttpStatus.BAD_REQUEST);
 		else
-		return new ResponseEntity<Product>(productService.saveProduct(product), HttpStatus.CREATED);	
-		
-		
-		//code - 10111
-		/* - 
-		 * ValidatingLengthOfTheProductCode validatingLengthOfTheProductCode = (input)
-		 * -> ValidatingLengthOfTheProductCode.testLengthOfTheProductCode(input); int
-		 * lengthOfTheProductCode =
-		 * validatingLengthOfTheProductCode.validateLengthOfTheProductCode(product.
-		 * getProductCode());
-		 * 
-		 * ValidateProductCodeIfItHasAnySpecialCharacters validateProductCode =
-		 * (productCode) -> ValidateProductCodeIfItHasAnySpecialCharacters.
-		 * testIfTheProductHasSpecialCharacters(productCode); boolean
-		 * ifProductCodeHasSpecialCharacters =
-		 * validateProductCode.validateIfProductCodeHasSpecialCharacters(product.
-		 * getProductCode());
-		 * 
-		 * if((lengthOfTheProductCode != 10) ||
-		 * (ifProductCodeHasSpecialCharacters==true)) return new
-		 * ResponseEntity<Product>(HttpStatus.CONFLICT); else return new
-		 * ResponseEntity<Product>(productService.saveProduct(product),
-		 * HttpStatus.CREATED);
-		 */			
-		
+		return new ResponseEntity<Product>(productService.saveProduct(product), HttpStatus.CREATED);		
+			
 	}
 	
 	
