@@ -42,7 +42,7 @@ public class Product
 	private String productDescription;
 	private BigDecimal productPrice;
 	
-	@NotLeadingOrTrailingSpaces(message = "No leading or trailing spaces")
+	@NotLeadingOrTrailingSpaces()	
 	private String productStorageKeepingUnit;
 	
 	@Past(message = "Date must be past")
