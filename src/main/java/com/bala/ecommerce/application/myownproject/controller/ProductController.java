@@ -22,11 +22,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bala.ecommerce.application.myownproject.apis.ValidateTheProductNameIfItContainsAnyLeadingOrTrailingSpaces;
 import com.bala.ecommerce.application.myownproject.apis.MessageToTheConsumer;
 import com.bala.ecommerce.application.myownproject.apis.MessagesToTheCostomerImpl;
 import com.bala.ecommerce.application.myownproject.apis.TrimTheProductNameIfItContainsAnyLeadingOrTrailingSpaces;
 import com.bala.ecommerce.application.myownproject.apis.ValidateProductCodeIfItHasAnySpecialCharacters;
+import com.bala.ecommerce.application.myownproject.apis.ValidateTheProductNameIfItContainsAnyLeadingOrTrailingSpaces;
 import com.bala.ecommerce.application.myownproject.apis.ValidatingLengthOfTheProductCode;
 import com.bala.ecommerce.application.myownproject.entity.Product;
 import com.bala.ecommerce.application.myownproject.service.ProductService;
