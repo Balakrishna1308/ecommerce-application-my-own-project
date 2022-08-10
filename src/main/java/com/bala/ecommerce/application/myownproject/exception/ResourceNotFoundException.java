@@ -19,9 +19,9 @@ public class ResourceNotFoundException extends RuntimeException
 		this.fieldValue = fieldValue;
 	}
 	
-	public ResourceNotFoundException(String string, long id) 
+	public ResourceNotFoundException(long id) 
 	{
-		super(String.format("%s, %d", string, id));
+		super(String.format("Hye consumer, product not found with this id #%d, please try it out with different product id", id));
 	}
 
 	public String getResourceName()
