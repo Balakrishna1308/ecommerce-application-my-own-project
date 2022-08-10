@@ -12,6 +12,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import com.bala.ecommerce.application.myownproject.validation.NotLeadingOrTrailingSpaces;
+import com.bala.ecommerce.application.myownproject.validation.OnlyString;
 import com.bala.ecommerce.application.myownproject.validation.ProductCode;
 
 import lombok.AllArgsConstructor;
@@ -44,6 +45,7 @@ public class Product
 	private String productDescription;
 	private BigDecimal productPrice;
 	
+	@OnlyString
 	@NotLeadingOrTrailingSpaces()	
 	private String productStorageKeepingUnit;
 	
