@@ -39,8 +39,12 @@ public class Product
 	@NotSpecialCharacter
 	private String productName;
 	
+	private Long categoryId;
+	
+	private String categoryName;	
+	
 	@NotLeadingOrTrailingSpaces(message = "No leading or trailing spaces for ProductCode")
-	@ProductCode(value = "VUI", message = "product code must start with VUI")
+	@ProductCode(value = "VUI", message = "product code must start with VUI")	
 	private String productCode;
 	
 	@NotSpecialCharacter

@@ -12,9 +12,10 @@ import javax.validation.Payload;
 @Target({ElementType.METHOD, ElementType.FIELD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ProductCode
-{
-	public String value() default "IUV";
+{		
+	public String value() default "VUI";	
 	public String message() default "must start with IUV";
+	
 	public Class<?>[] groups() default {};
 	public Class<? extends Payload> [] payload() default {};
 }
