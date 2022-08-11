@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bala.ecommerce.application.myownproject.apis.MessageToTheConsumer;
 import com.bala.ecommerce.application.myownproject.apis.MessagesToTheCostomerImpl;
 import com.bala.ecommerce.application.myownproject.apis.TrimTheProductNameIfItContainsAnyLeadingOrTrailingSpaces;
-import com.bala.ecommerce.application.myownproject.apis.ValidateProductCodeIfItHasAnySpecialCharacters;
+import com.bala.ecommerce.application.myownproject.apis.ValidateSpecialCharacters;
 import com.bala.ecommerce.application.myownproject.apis.ValidateTheProductNameIfItContainsAnyLeadingOrTrailingSpaces;
 import com.bala.ecommerce.application.myownproject.apis.ValidatingLengthOfTheProductCode;
 import com.bala.ecommerce.application.myownproject.entity.Product;
@@ -59,9 +59,9 @@ public class ProductController
 		ValidatingLengthOfTheProductCode validatingLengthOfTheProductCode = (input) -> input.length();
 		int lengthOfTheProductCode = validatingLengthOfTheProductCode.validateLengthOfTheProductCode(product.getProductCode());		
 		
-		ValidateProductCodeIfItHasAnySpecialCharacters validateProductCode =
-		(productCode) -> ValidateProductCodeIfItHasAnySpecialCharacters.testIfTheProductHasSpecialCharacters(productCode);
-		boolean ifProductCodeHasSpecialCharacters = validateProductCode.validateIfProductCodeHasSpecialCharacters(product.getProductCode());
+		ValidateSpecialCharacters validateProductCode =
+		(productCode) -> ValidateSpecialCharacters.doesInputHaveSpecialCharacters(productCode);
+		boolean ifProductCodeHasSpecialCharacters = validateProductCode.validateSpecialCharacters(product.getProductCode());
 				
 		ValidateTheProductNameIfItContainsAnyLeadingOrTrailingSpaces trimTheProductNameIfItContainsAnyLeadingOrTrailingSpaces
 		= ValidateTheProductNameIfItContainsAnyLeadingOrTrailingSpaces::trimTheProductNameIfItHasAnyLeadingOrTrailingSpaces;		
@@ -83,9 +83,9 @@ public class ProductController
 		ValidatingLengthOfTheProductCode validatingLengthOfTheProductCode = (input) -> input.length();
 		int lengthOfTheProductCode = validatingLengthOfTheProductCode.validateLengthOfTheProductCode(product.getProductCode());		
 		
-		ValidateProductCodeIfItHasAnySpecialCharacters validateProductCode =
-		(productCode) -> ValidateProductCodeIfItHasAnySpecialCharacters.testIfTheProductHasSpecialCharacters(productCode);
-		boolean ifProductCodeHasSpecialCharacters = validateProductCode.validateIfProductCodeHasSpecialCharacters(product.getProductCode());
+		ValidateSpecialCharacters validateProductCode =
+		(productCode) -> ValidateSpecialCharacters.doesInputHaveSpecialCharacters(productCode);
+		boolean ifProductCodeHasSpecialCharacters = validateProductCode.validateSpecialCharacters(product.getProductCode());
 			
 		TrimTheProductNameIfItContainsAnyLeadingOrTrailingSpaces trimTheProductNameIfItContainsAnyLeadingOrTrailingSpaces
 		= TrimTheProductNameIfItContainsAnyLeadingOrTrailingSpaces::trimTheProductNameIfItHasAnyLeadingOrTrailingSpaces;

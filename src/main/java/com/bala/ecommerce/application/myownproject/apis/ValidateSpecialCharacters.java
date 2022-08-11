@@ -4,11 +4,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @FunctionalInterface
-public interface ValidateProductCodeIfItHasAnySpecialCharacters
+public interface ValidateSpecialCharacters
 {
-	boolean validateIfProductCodeHasSpecialCharacters(String productCode);
+	boolean validateSpecialCharacters(String productCode);
 	
-	public static boolean testIfTheProductHasSpecialCharacters(String input)
+	public static boolean doesInputHaveSpecialCharacters(String input)
 	{
 		{
 			boolean val = false;

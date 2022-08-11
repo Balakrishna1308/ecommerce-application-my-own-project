@@ -12,6 +12,7 @@ import javax.validation.constraints.Past;
 import javax.validation.constraints.Size;
 
 import com.bala.ecommerce.application.myownproject.validation.NotLeadingOrTrailingSpaces;
+import com.bala.ecommerce.application.myownproject.validation.NotSpecialCharacter;
 import com.bala.ecommerce.application.myownproject.validation.OnlyString;
 import com.bala.ecommerce.application.myownproject.validation.ProductCode;
 
@@ -35,12 +36,14 @@ public class Product
 	private Long productId;
 	
 	@Size(min = 8, max=25, message = "Product name must be between 8 and 25")
+	@NotSpecialCharacter
 	private String productName;
 	
 	@NotLeadingOrTrailingSpaces(message = "No leading or trailing spaces for ProductCode")
 	@ProductCode(value = "VUI", message = "product code must start with VUI")
 	private String productCode;
 	
+	@NotSpecialCharacter
 	@NotLeadingOrTrailingSpaces(message = "Leading or trailing spaces not allowed for product description")	
 	private String productDescription;
 	private BigDecimal productPrice;

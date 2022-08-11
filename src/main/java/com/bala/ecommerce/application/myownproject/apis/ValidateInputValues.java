@@ -15,7 +15,7 @@ public class ValidateInputValues
 		}			  
 	  }
 	  
-	  if(ValidateProductCodeIfItHasAnySpecialCharacters.testIfTheProductHasSpecialCharacters(productStorageKeepingUnit)||
+	  if(ValidateSpecialCharacters.doesInputHaveSpecialCharacters(productStorageKeepingUnit)||
 		isItNumber)
 	  {
 		  isStringOnly = false;		 
