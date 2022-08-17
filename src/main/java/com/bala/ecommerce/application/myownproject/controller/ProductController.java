@@ -22,8 +22,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.bala.ecommerce.application.myownproject.apis.MessageToTheConsumer;
-import com.bala.ecommerce.application.myownproject.apis.MessagesToTheCostomerImpl;
 import com.bala.ecommerce.application.myownproject.apis.TrimTheProductNameIfItContainsAnyLeadingOrTrailingSpaces;
 import com.bala.ecommerce.application.myownproject.apis.ValidateSpecialCharacters;
 import com.bala.ecommerce.application.myownproject.apis.ValidateTheProductNameIfItContainsAnyLeadingOrTrailingSpaces;
@@ -44,13 +42,13 @@ public class ProductController
 	private ProductService productService;
 	
 	
-	//Simple message to the customer
-	@GetMapping("/message/")
-	public String simpleMesageToTheConsumers()
-	{
-		MessageToTheConsumer messageToTheConsumer = new MessagesToTheCostomerImpl();
-		return messageToTheConsumer.defaultMessageToTheConsumer();
-	}	
+//	//Simple message to the customer
+//	@GetMapping("/message/")
+//	public String simpleMesageToTheConsumers()
+//	{
+//		MessageToTheConsumer messageToTheConsumer = new MessagesToTheCostomerImpl();
+//		return messageToTheConsumer.defaultMessageToTheConsumer();
+//	}	
 	
 	//Create saveProduct() REST end point
 	@PostMapping("/")
